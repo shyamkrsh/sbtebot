@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cardBtn{
+    background: linear-gradient(to right, #00ffff, #3de89e, #00ffff);
+    padding: 5px;
+    border-radius: 50%;
+}
+.searchBtn{
+    background: linear-gradient(to right, #00ffff, #00fff1, #00ffff);
+    padding: 5px;
+    border-radius: 50%;
+}
