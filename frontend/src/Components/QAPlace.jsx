@@ -26,7 +26,7 @@ function QAPlace() {
       prevQuestions.push(value);
       localStorage.setItem('questions', JSON.stringify(prevQuestions));
       setLoading(true);
-      axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${import.meta.env.GEMINI_API_KEY}`, {
+      axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBfjro3dw9hviS_4YllqafkuwPEKT-P5UM`, {
         "contents": [{
           "parts": [
             {
