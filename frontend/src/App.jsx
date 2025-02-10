@@ -8,7 +8,7 @@ function App() {
   return (
 
     <>
-      <div className='bg-cyan-50' style={{ maxHeight: '100vh', minHeight: '100vh' }}>
+      <div className='bg-cyan-50 overflow-hidden relative' style={{maxHeight: 'calc(100vh - 3.8rem)', minHeight: 'calc(100vh - 3.8rem)'}}>
         <Navbar />
         <QAPlace />
       </div>
