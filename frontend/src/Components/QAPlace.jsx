@@ -66,7 +66,7 @@ function QAPlace() {
             return (
               <div key={index}>
                 <div className='w-[100%] flex justify-end'>
-                  <div className="chat chat-end">
+                  <div className="chat chat-end" style={{minWidth: '70%'}}>
                     <div className="chat-bubble bg-cyan-200 text-slate-700 ">{question}</div>
                   </div>
                 </div>
