@@ -51,7 +51,7 @@ And Instructions to you :- I am asking about State board of technical education,
 
   return (
     <>
-      <div className='w-[100%] p-2 bg-cyan-50 overflow-x-hidden overflow-y-auto text-black pb-5' style={{ maxHeight: 'calc(100vh - 6.8rem)', minHeight: 'calc(100vh - 6.8rem)', scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={chatRef} >
+      <div className='w-[100%] p-2 bg-cyan-50 overflow-x-hidden overflow-y-auto text-black pb-16 md:pb-4' style={{ maxHeight: 'calc(100vh - 6.8rem)', minHeight: 'calc(100vh - 6.8rem)', scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={chatRef} >
 
 
         {
