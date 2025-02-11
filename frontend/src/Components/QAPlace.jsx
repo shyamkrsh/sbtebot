@@ -23,7 +23,10 @@ function QAPlace() {
     localStorage.setItem('answers', JSON.stringify([]));
   }
 
-  const socket = io(`${import.meta.env.VITE_API_URL}`);
+  const socket = io("https://sbtebotbackend.vercel.app", {
+    transports: ["websocket"], // ✅ Force WebSocket (avoid polling issues)
+    withCredentials: true
+  });
 
   let handleSubmit = async (e) => {
     e?.preventDefault();
