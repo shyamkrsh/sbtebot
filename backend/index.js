@@ -12,7 +12,7 @@ const server = http.createServer(app);
 
 app.use(cors({
     origin: [
-        "https://easystayngp.vercel.app",
+        "https://sbtebot.vercel.app",
         "http://localhost:5173"
     ],
     credentials: true,
@@ -22,8 +22,8 @@ app.use(cors({
 const io = new Server(server, {
     cors: {
         origin: [
-            "https://easystayngp.vercel.app",
-            "http://localhost:5173"
+            "http://localhost:5173",
+            "https://sbtebot.vercel.app",
         ],
         credentials: true,
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
