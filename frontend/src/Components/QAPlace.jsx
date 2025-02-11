@@ -67,10 +67,10 @@ And Instructions to you :- I am asking about State board of technical education,
                   <h3 className='px-2 font-bold mb-1'><img src="https://i.ibb.co/F4hW40tv/robot-3559850.png" className='w-[1.8rem] h-[1.5rem]' /> </h3>
                   <div className={answers[index] ? "chat chat-start" : 'hidden'}>
                     <div className="chat-bubble bg-white shadow-sm text-slate-700">
-                      {answers[index]?.replace(/\*\*(.*?)\*\*/g, '✨ $1 ✨')
-                        .split("\n")  // Ensure proper newlines
-                        .map(line => line.trim())  // Trim spaces from each line
-                        .filter(line => line !== "")  // Remove empty lines
+                      {answers[index]?.replace(/\*\*(.*?)\*\*/g, '\n $1 \n')
+                        .split("\n")  
+                        .map(line => line.trim()) 
+                        .filter(line => line !== "") 
                         .join("\n")}
                     </div>
                   </div>
