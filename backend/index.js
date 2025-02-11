@@ -35,7 +35,7 @@ io.on("connection", async (socket) => {
                     parts: [{ text: q }]
                 }
             ],
-            systemInstruction: "You are an AI assistant for SBTE to help users to know about SBTE"
+            systemInstruction: "You are an AI assistant for SBTE to help users to know about SBTE give answer as short as possible if users asks questions outside SBTE then please don't respond"
         });
         socket.emit("answers", result.response.text());
     })
