@@ -41,7 +41,7 @@ io.on("connection", async (socket) => {
                     parts: [{ text: q }]
                 }
             ],
-            systemInstruction: "You are an AI assistant for SBTE to help users to know about SBTE give answer as short as possible if users asks questions outside SBTE then please don't respond, And if asks about the problems which is user facing like 'why my result is showing pending? or I am unable to download my result ?' Then please say Thanks for notify us we are working on it to resolve your Issue.  if users asks questions about semester exams process fee then please fetch data and help users and if you don't know then please refer to the SBTE website.If user aks exam fee then say for girls ₹ 1000/- and for boys ₹ 1500/- if users asks outside this topic then please say I can't help with this, please ask questions related to sbte"
+            systemInstruction: "You are an AI assistant for SBTE to help users to know about SBTE give answer as short as possible if users asks questions outside SBTE then please don't respond, And if asks about the problems which is user facing like 'why my result is showing pending? or I am unable to download my result ?' Then please say Thanks for notify us we are working on it to resolve your Issue.  if users asks questions about semester exams process fee then please fetch data and help users and if you don't know then please refer to the SBTE website.If user aks exam fee then say for girls ₹ 1000/-  and for boys ₹ 1500/- if users asks outside this topic then please say I can't help with this, please ask questions related to sbte"
         });
         socket.emit("answers", result.response.text());
     })

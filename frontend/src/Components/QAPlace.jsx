@@ -120,7 +120,7 @@ function QAPlace() {
 
 
 
-        <div className={loading ? 'ms-3 w-[3rem] h-[2rem] bg-slate-100 border grid place-items-center rounded-lg ' : 'hidden'}>
+        <div className={loading ? 'ms-3 w-[3rem] h-[2rem]  grid place-items-center rounded-lg ' : 'hidden'}>
           <span className="loading loading-dots loading-md text-slate-950"></span>
         </div>
       </div >
