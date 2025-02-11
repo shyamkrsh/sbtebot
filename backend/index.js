@@ -3,7 +3,7 @@ import { Server } from 'socket.io'
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import cors from 'cors'
 const app = express();
-const port = 8080;
+const PORT = process.env.PORT || 8080;
 import http from 'http'
 import dotenv from 'dotenv'
 dotenv.config();
@@ -54,4 +54,6 @@ io.on("connection", async (socket) => {
 })
 
 
-export default server;
+server.listen(PORT, () => {
+    console.log(`Server is listening to the port : ${PORT}`);
+})
