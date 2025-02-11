@@ -11,14 +11,14 @@ dotenv.config();
 const server = http.createServer(app);
 
 app.use(cors({
-    origin: "https://sbtebot.vercel.app",
+    origin: "http://localhost:5173",
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 }))
 
 const io = new Server(server, {
     cors: {
-        origin: "https://sbtebot.vercel.app",
+        origin: "http://localhost:5173",
         credentials: true,
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     }

@@ -23,7 +23,7 @@ function QAPlace() {
     localStorage.setItem('answers', JSON.stringify([]));
   }
 
-  const socket = io("https://sbtebotbackend.vercel.app", {
+  const socket = io("https://sbtebot-1.onrender.com", {
     withCredentials: true
   });
 
@@ -72,7 +72,7 @@ function QAPlace() {
           <img src="https://i.ibb.co/0RkP7K2z/sbte-logo.png" className='w-[2.5rem] h-[2.5rem]' />
         </div>
         <h1 className='text-2xl font-semibold text-cyan-500 font-serif'>SBTE AI BOT</h1>
-        <div className='cursor-pointer cardBtn' onClick={() => { localStorage.removeItem('questions'), localStorage.removeItem('answers'), setQuestions([]), setAnswers([]) }}>
+        <div className='cursor-pointer cardBtn' onClick={() => { localStorage.removeItem('questions'), localStorage.removeItem('answers'), setQuestions([]), setAnswers([]) , setLoading(false)}}>
           <FaPlus className='text-2xl text-white' />
         </div>
       </div>
