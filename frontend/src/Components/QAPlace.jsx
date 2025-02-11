@@ -22,7 +22,7 @@ function QAPlace() {
   if (!localStorage.getItem('answers')) {
     localStorage.setItem('answers', JSON.stringify([]));
   }
-  const socket = io("https://sbtebotbackend.vercel.app", {
+  const socket = io(`${import.meta.env.VITE_API_URL}`, {
     withCredentials: true
   });
 
