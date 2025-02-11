@@ -1,54 +1,57 @@
-import express from 'express'
-import { Server } from 'socket.io'
+import express from 'express';
+import { Server } from 'socket.io';
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import cors from 'cors'
-const app = express();
-const port = 8080;
-import http from 'http'
-import dotenv from 'dotenv'
+import cors from 'cors';
+import http from 'http';
+import dotenv from 'dotenv';
+
 dotenv.config();
 
+const app = express();
+const port = 8080;
 const server = http.createServer(app);
 
 app.use(cors({
-    cors: {
-        origin: "https://sbtebot.vercel.app", 
-        methods: ["GET", "POST"],
-        
-    }
+    origin: "https://sbtebot.vercel.app",
+    methods: ["GET", "POST"]
 }));
 
 const io = new Server(server, {
     cors: {
-        origin: "https://sbtebot.vercel.app", // ✅ Allow frontend URL
+        origin: "https://sbtebot.vercel.app",
         methods: ["GET", "POST"]
     }
 });
 
 app.get("/demo", (req, res) => {
     res.send("Working ...");
-})
+});
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+const model = genAI.getGenerativeModel({
+    model: "gemini-2.0-flash",
+    systemInstruction: "You are an AI assistant for SBTE. Keep answers short and specific to SBTE."
+});
 
-io.on("connection", async (socket) => {
+io.on("connection", (socket) => {
+    console.log("A user connected");
+
     socket.on("question", async (q) => {
-        const result = await model.generateContent({
-            contents: [
-                {
-                    role: "user",
-                    parts: [{ text: q }]
-                }
-            ],
-            systemInstruction: "You are an AI assistant for SBTE to help users to know about SBTE give answer as short as possible if users asks questions outside SBTE then please don't respond"
-        });
-        socket.emit("answers", result.response.text());
-    })
+        try {
+            const result = await model.generateContent(q);
+            const responseText = result?.response?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a response.";
+            socket.emit("answers", responseText);
+        } catch (error) {
+            console.error("Error generating response:", error);
+            socket.emit("answers", "An error occurred while processing your question.");
+        }
+    });
 
-})
-
+    socket.on("disconnect", () => {
+        console.log("A user disconnected");
+    });
+});
 
 server.listen(port, () => {
-    console.log(`Application is listening to the port : ${port}`);
-})
+    console.log(`Application is listening on port: ${port}`);
+});
