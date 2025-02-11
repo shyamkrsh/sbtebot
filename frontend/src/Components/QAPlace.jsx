@@ -77,7 +77,7 @@ function QAPlace() {
         </div>
       </div>
 
-      <div className='w-[100%] relative p-2 bg-cyan-50 overflow-x-hidden overflow-y-auto text-black pb-16 md:pb-4' style={{ maxHeight: 'calc(100vh - 6.8rem)', minHeight: 'calc(100vh - 6.8rem)', scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={chatRef} >
+      <div className='w-[100%] relative px-2 pt-2 pb-[5rem] bg-cyan-50 overflow-x-hidden overflow-y-auto text-black md:pb-4' style={{ maxHeight: 'calc(100vh - 6.8rem)', minHeight: 'calc(100vh - 6.8rem)', scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={chatRef} >
         {
           questions?.map((question, index) => {
             return (
