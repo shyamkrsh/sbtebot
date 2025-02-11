@@ -21,10 +21,7 @@ app.use(cors({
 
 const io = new Server(server, {
     cors: {
-        origin: [
-            "http://localhost:5173",
-            "https://sbtebot.vercel.app",
-        ],
+        origin: "http://localhost:5173",
         credentials: true,
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     }
