@@ -10,9 +10,20 @@ dotenv.config();
 
 const server = http.createServer(app);
 
-app.use(cors());
+app.use(cors({
+    cors: {
+        origin: "https://sbtebot.vercel.app", 
+        methods: ["GET", "POST"],
+        
+    }
+}));
 
-const io = new Server(server);
+const io = new Server(server, {
+    cors: {
+        origin: "https://sbtebot.vercel.app", // ✅ Allow frontend URL
+        methods: ["GET", "POST"]
+    }
+});
 
 app.get("/demo", (req, res) => {
     res.send("Working ...");

@@ -23,9 +23,7 @@ function QAPlace() {
     localStorage.setItem('answers', JSON.stringify([]));
   }
 
-  const socket = io("https://sbtebotbackend.vercel.app", {
-    transports: ["polling"], // ✅
-  });
+  const socket = io("https://sbtebotbackend.vercel.app");
 
   let handleSubmit = async (e) => {
     e?.preventDefault();
