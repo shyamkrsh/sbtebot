@@ -23,6 +23,10 @@ const io = new Server(server, {
     }
 })
 
+app.get("/demo", (req, res) => {
+    res.send("Working ...");
+})
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
