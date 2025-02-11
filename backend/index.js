@@ -54,6 +54,4 @@ io.on("connection", async (socket) => {
 })
 
 
-server.listen(port, () => {
-    console.log(`Application is listening to the port : ${port}`);
-})
+export default server;
