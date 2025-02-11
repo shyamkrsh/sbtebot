@@ -24,8 +24,7 @@ function QAPlace() {
   }
 
   const socket = io("https://sbtebotbackend.vercel.app", {
-    transports: ["polling"], // ✅ Force polling instead of WebSocket
-    withCredentials: true
+    transports: ["polling"], // ✅
   });
 
   let handleSubmit = async (e) => {
