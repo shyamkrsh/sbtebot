@@ -24,7 +24,7 @@ function QAPlace() {
   }
 
   const socket = io("https://sbtebotbackend.vercel.app", {
-    transports: ["websocket"], // ✅ Force WebSocket (avoid polling issues)
+    transports: ["polling"], // ✅ Force polling instead of WebSocket
     withCredentials: true
   });
 
