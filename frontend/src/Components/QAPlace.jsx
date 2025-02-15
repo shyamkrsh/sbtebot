@@ -111,7 +111,7 @@ function QAPlace() {
           })
         }
 
-        <div className={questions.length == 0 ? 'w-[96%] h-[10rem]  mx-auto mt-[60%]' : "hidden"}>
+        <div className={questions.length == 0 ? 'w-[96%] h-[10rem]  mx-auto mt-[60%] md:mt-[10%]' : "hidden"}>
           <img src="https://i.ibb.co/F4hW40tv/robot-3559850.png" className='w-[4rem] h-[4rem] mx-auto' />
           <p className='py-1 px-2 bg-cyan-500 rounded-full text-center text-white mt-5' onClick={() => builtQuestion("When 6th Semester SBTE Exam will be conducted ?")}>When 6th Semester SBTE Exam will be conducted ?</p>
           <p className='py-1 px-2 bg-cyan-500 rounded-full text-center text-white mt-1' onClick={() => builtQuestion("Why my result is showing pending ?")}>Why my result is showing pending ?</p>
